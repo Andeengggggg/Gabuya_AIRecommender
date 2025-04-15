@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CIT 511: WEBSYSTEMS AND TECHNOLOGIES 2</title>
+</head>
+<body>
+    <h1>Gabuya: AI Recommender Ecommerce</h1>
+    <h2>Movies List</h2>
+
+    <a href="{% url 'add_movie' %}">Add a New Movie</a>  <!-- <-- This is what you're missing -->
+
+    <ul>
+        {% for movie in movies %}
+            <li>{{ movie.title }} - {{ movie.description }}</li>
+        {% empty %}
+            <li>No movies yet.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>All Movies</h2>
+    <ul>
+        {% for movie in movies %}
+            <li>{{ movie.title }} - {{ movie.description }}</li>>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_movie' %}">Add a New Movie</a>  <!-- <-- This is what you're missing -->
+    
+    <h2>Recommended Movies</h2>
+<ul>
+    {% for movie in recommended_movies %}
+        <li>{{ movie.title }} - {{ movie.description }}</li>
+    {% endfor %}
+</ul>
+
+
+</body>
+</html>

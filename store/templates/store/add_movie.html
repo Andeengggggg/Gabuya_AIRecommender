@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gabuya: AI Recommender Ecommerce</title> 
+</head>
+<body>
+    <h2>Add New Movies</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Movie</button>
+    </form>
+
+    <a href="{% url 'movies_list' %}">Back to Movies List</a>
+</body>
+</html>
